@@ -3,7 +3,6 @@ package com.company.xml.stax;
 import java.io.OutputStream;
 import java.util.List;
 
-import javax.management.RuntimeErrorException;
 import javax.xml.stream.XMLOutputFactory;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamWriter;
@@ -43,7 +42,7 @@ public class StAXSerializer {
         writer.writeStartElement("lastName");
         writer.writeCharacters(employee.getLastName());
         writer.writeEndElement();
-        
+
         writer.writeStartElement("email");
         writer.writeCharacters(employee.getEmail());
         writer.writeEndElement();
@@ -51,7 +50,7 @@ public class StAXSerializer {
         writer.writeStartElement("password");
         writer.writeCharacters(employee.getPassword());
         writer.writeEndElement();
-        
+
         writer.writeStartElement("phoneNumber");
         writer.writeCharacters(employee.getPhoneNumber());
         writer.writeEndElement();
@@ -59,7 +58,7 @@ public class StAXSerializer {
         writer.writeStartElement("tag");
         writer.writeCharacters(employee.getTag());
         writer.writeEndElement();
-        
+
         writer.writeStartElement("userRoleId");
         writer.writeCharacters(employee.getUserRoleId().toString());
         writer.writeEndElement();

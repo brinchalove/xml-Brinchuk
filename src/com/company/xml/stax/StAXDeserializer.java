@@ -11,8 +11,6 @@ import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.events.StartElement;
 import javax.xml.stream.events.XMLEvent;
 
-import org.xml.sax.XMLReader;
-
 import com.company.xml.Employee;
 
 public class StAXDeserializer {
@@ -39,19 +37,19 @@ public class StAXDeserializer {
                     case "lastName":
                         processLastName(reader, employee);
                         break;
-                    case "email": 
+                    case "email":
                         processEmail(reader, employee);
                         break;
-                    case "phoneNumber": 
+                    case "phoneNumber":
                         processPhoneNumber(reader, employee);
                         break;
-                    case "password": 
+                    case "password":
                         processPassword(reader, employee);
                         break;
-                    case "tag": 
+                    case "tag":
                         processTag(reader, employee);
                         break;
-                    case "userRoleId": 
+                    case "userRoleId":
                         processUserRoleId(reader, employee);
                         break;
                     }
@@ -73,21 +71,27 @@ public class StAXDeserializer {
     private void processFirstName(XMLEventReader reader, Employee employee) throws XMLStreamException {
         employee.setFirstName(reader.getElementText());
     }
+
     private void processLastName(XMLEventReader reader, Employee employee) throws XMLStreamException {
         employee.setLastName(reader.getElementText());
     }
+
     private void processEmail(XMLEventReader reader, Employee employee) throws XMLStreamException {
         employee.setEmail(reader.getElementText());
     }
+
     private void processPhoneNumber(XMLEventReader reader, Employee employee) throws XMLStreamException {
         employee.setPhoneNumber(reader.getElementText());
     }
+
     private void processPassword(XMLEventReader reader, Employee employee) throws XMLStreamException {
         employee.setPassword(reader.getElementText());
     }
+
     private void processTag(XMLEventReader reader, Employee employee) throws XMLStreamException {
         employee.setTag(reader.getElementText());
     }
+
     private void processUserRoleId(XMLEventReader reader, Employee employee) throws XMLStreamException {
         employee.setUserRoleId(Byte.parseByte(reader.getElementText()));
     }
